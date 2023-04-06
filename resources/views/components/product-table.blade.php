@@ -3,7 +3,7 @@
 
 
   <!--Card-->
-  <div id='recipients' class="p-8 mt-6 lg:mt-10 rounded shadow bg-white ">
+  <div id='recipients' class="p-8  mt-6 lg:mt-10 rounded shadow bg-white ">
 
 
     <table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
@@ -12,7 +12,8 @@
           <th data-priority="1">Brand Name</th>
           <th data-priority="2">Stock</th>
           <th data-priority="3">Status</th>
-          <th data-priority="4">price</th>
+          <th data-priority="4">Price</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -24,7 +25,7 @@
         </tr>
         
 
-        <!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+     
         <tr>
           <td>Nintento wii</td>
           <td>10</td>
