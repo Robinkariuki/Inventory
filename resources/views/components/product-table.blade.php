@@ -23,7 +23,7 @@
           <td>{{$product->Brand}}</td>
           <td>{{$product->Stock}}</td>
           <td>{{$product->Status}}</td>
-          <td>{{$product->Price}}</td>
+          <td>$ {{$product->Price}}</td>
         </tr>
           @endforeach
      
