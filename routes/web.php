@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Product;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +15,8 @@ use App\Models\Product;
 |
 */
 
-Route::get('/',[ProductController::class,'index']);
+Route::get('/',[ProductController::class,'index'])->name('product.index');
+Route::get('/getDataTableData',[ProductController::class,'getDataTableData'])->name('getDataTableData');
+Route::post('/getProductData',[ProductController::class,'getProductData'])->name('getProductData');
+Route::post('/updateProduct',[ProductController::class,'updateProduct'])->name('updateProduct');
+Route::post('/deleteProduct',[ProductController::class,'deleteProduct'])->name('deleteProduct');

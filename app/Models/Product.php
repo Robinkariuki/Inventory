@@ -13,6 +13,10 @@ class Product extends Model
      * The table associated with the model.
      *
      * @var string
+     * 
      */
+    protected $fillable =[
+        'Brand','Stock','Status','Price'
+    ];
     protected $table = 'product';
 }
