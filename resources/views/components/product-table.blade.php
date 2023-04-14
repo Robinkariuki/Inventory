@@ -47,7 +47,7 @@
 </div> --}}
 
 
-<div class='container w-full md:w-4/5 xl:w-3/5  mx-auto px-2'>
+<div class='container w-full md:w-4/5 xl:w-3/5  mx-auto px-2 mt-5'>
 
   <!-- Modal -->
   <div id="updateModal" class="modal fade"  role="dialog">
@@ -90,9 +90,10 @@
 
       </div>
   </div>
-
+ <!--Card-->
+ <div id='recipients' class="p-8  mt-6 lg:mt-10 rounded shadow bg-white ">
   <!-- Table -->
-  <table id='empTable' class='datatable stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;'>
+  <table id='empTable' class="datatable stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
       <thead >
         <tr>
           <th data-priority="1">Brand</th>
@@ -103,4 +104,5 @@
         </tr>
       </thead>
   </table>
+ </div>
 </div>
