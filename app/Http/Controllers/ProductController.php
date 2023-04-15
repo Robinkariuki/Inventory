@@ -111,8 +111,35 @@ public function getDataTableData(){
 
 
    }
+  
+   public function createProduct(){
 
-        
+     return view('create-product');
+
+   }
+  
+   
+ //store product data
+
+ public function storeProductData(Request $request){
+  
+    $formFields= $request->validate([
+        'Brand'=>'required',
+        'Stock'=>'required',
+        'Status'=>'required',
+        'Price'=>'required'
+
+    ]);
+
+
+    Product::create($formFields);
+
+    return redirect('/')->with('message','Product Created Successfully!');
+
+
+      
+ }
+
 
     }
 
