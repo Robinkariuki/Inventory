@@ -131,13 +131,16 @@
                 </a>
             </div>
 			<div>
-                <span class="inline-block text-sm  text-teal-200 hover:text-white mr-4">welcome {{auth()->user()->name}}</span>
-
+				<a href="/logout" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 ">
+					Logout
+				   </a>
+                <span class="inline-block  font-semibold text-xl tracking-tight text-white  hover:text-white">welcome {{auth()->user()->name}}</span>
+		
               </div>
             @else
-            <div>
-                <a href="/register" class="inline-block text-sm  text-teal-200 hover:text-white mr-4">Register</a>
-                <a href="/login" class="inline-block text-sm  text-teal-200 hover:text-white mr-4">Login</a>
+            <div class="flex  md:flex md:flex-grow flex-row-reverse space-x-2 ">
+                <a href="/register" class="inline-block text-sm  text-teal-200 hover:text-white ml-4">Register</a>
+                <a href="/login" class="inline-block text-sm  text-teal-200 hover:text-white mr-4 ">Login</a>
               </div>
           </div>
 		  @endauth
