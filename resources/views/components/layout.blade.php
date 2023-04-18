@@ -130,8 +130,8 @@
                 </a>
             </div>
             <div>
-                <a href="#" class="inline-block text-sm  text-teal-200 hover:text-white mr-4">Register</a>
-                <a href="#" class="inline-block text-sm  text-teal-200 hover:text-white mr-4">Login</a>
+                <a href="/register" class="inline-block text-sm  text-teal-200 hover:text-white mr-4">Register</a>
+                <a href="/login" class="inline-block text-sm  text-teal-200 hover:text-white mr-4">Login</a>
               </div>
           </div>
 

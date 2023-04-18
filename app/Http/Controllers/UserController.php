@@ -18,14 +18,19 @@ class UserController extends Controller
 
     //create New user
     public function store(Request $request){
+      
         $formFields = $request->validate([
             'name'=>['required','min:3'],
             'email'=>['required','email',Rule::unique('users','email')],
             'password'=>'required|confirmed|min:6'
         ]);
+  
+       
         //Hash Password
         $formFields['password'] = bcrypt($formFields['password']);
         
+        
+
         //create User
         $user = User::create($formFields);
 
@@ -56,6 +61,7 @@ class UserController extends Controller
 
   public function authenticate(Request $request){
    $formFields = $request->validate([
+    
     'email'=>['required','email'],
     'password'=>'required'
    ]);
