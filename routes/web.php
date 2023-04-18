@@ -19,9 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[ProductController::class,'index'])->name('product.index');
 
 //show create product form
-Route::get('/product/create',[ProductController::class,'createProduct']);
+Route::get('/product/create',[ProductController::class,'createProduct'])->middleware('auth');
 // store product data
-Route::post('/product',[ProductController::class,'storeProductData']);
+Route::post('/product',[ProductController::class,'storeProductData'])->middleware('auth');
 
 Route::get('/getDataTableData',[ProductController::class,'getDataTableData'])->name('getDataTableData');
 Route::post('/getProductData',[ProductController::class,'getProductData'])->name('getProductData');

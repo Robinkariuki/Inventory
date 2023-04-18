@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use DataTables;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use DataTables;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -26,12 +27,23 @@ public function getDataTableData(){
     return Datatables::of($products)
     ->addIndexColumn()
     ->addColumn('action',function($row){
-        //update 
-        $updateButton = "<button class='btn btn-sm btn-info updateProduct' data-id='".$row->id."' data-bs-toggle='modal' data-bs-target='#updateModal' ><i class='fa-solid fa-pen-to-square'></i></button>";
+        if (Auth::check()) {
+            // The user is logged in...
+              //update 
+        $updateButton = "<button class='btn btn-sm btn-info updateProduct'  data-id='".$row->id."' data-bs-toggle='modal' data-bs-target='#updateModal' ><i class='fa-solid fa-pen-to-square'></i></button>";
         // Delete Button
         $deleteButton = "<button class='btn btn-sm btn-danger deleteProduct' data-id='".$row->id."'><i class='fa-solid fa-trash'></i></button>";
-    
         return $updateButton." ".$deleteButton;
+        }
+        else{
+                          //update 
+        $updateButton = "<button class='btn btn-sm btn-info updateProduct'  disabled data-id='".$row->id."' data-bs-toggle='modal' data-bs-target='#updateModal' ><i class='fa-solid fa-pen-to-square'></i></button>";
+        // Delete Button
+        $deleteButton = "<button class='btn btn-sm btn-danger deleteProduct' disabled data-id='".$row->id."'><i class='fa-solid fa-trash'></i></button>";
+        return $updateButton." ".$deleteButton;
+        }
+      
+        
     })
       ->make();
     
