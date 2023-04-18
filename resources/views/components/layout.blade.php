@@ -124,17 +124,23 @@
             <a href="/" class="font-semibold text-xl tracking-tight hover:text-white">Inventory</a>
           </div>
           <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+			@auth
             <div class="text-sm lg:flex-grow">
                 <a href="/product/create" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                  Add products
                 </a>
             </div>
+			<div>
+                <span class="inline-block text-sm  text-teal-200 hover:text-white mr-4">welcome {{auth()->user()->name}}</span>
+
+              </div>
+            @else
             <div>
                 <a href="/register" class="inline-block text-sm  text-teal-200 hover:text-white mr-4">Register</a>
                 <a href="/login" class="inline-block text-sm  text-teal-200 hover:text-white mr-4">Login</a>
               </div>
           </div>
-
+		  @endauth
     </nav>
   <main>
     {{$slot}}
